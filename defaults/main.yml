@@ -1,0 +1,17 @@
+---
+
+## List of wireless interface to configure.
+#
+# name:   name of the wlan iface
+# ssid:   SSID of the wlan
+# psk:    WPA/WPA2 key
+
+# wireless_iface:
+#   - name: wlan0
+#     ssid: MYSSID
+#     psk: MY_SECRET_KEY
+
+
+## Try to bring interface up at bootime
+#
+wireless_bootime: yes

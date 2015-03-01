@@ -1,0 +1,6 @@
+# {{ ansible_managed }}
+
+auto {{ item.name }}
+iface {{ item.name }} inet dhcp
+   wpa-ssid {{ item.ssid }}
+   wpa-psk {{ item.psk }}

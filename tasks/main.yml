@@ -1,0 +1,27 @@
+---
+
+- name: install wireless tools
+  apt:
+    name: wpasupplicant
+    update_cache: yes
+    cache_valid_time: 3600
+    install_recommends: no
+
+- name: install wlan configuration files
+  template:
+    src: etc/network/interfaces.d/wlan
+    dest: '/etc/network/interfaces.d/{{ item.name }}'
+    owner: root
+    group: root
+    mode: '0600'
+  with_items: wireless_iface
+  when: wireless_iface is defined
+
+- name: add source directory to interfaces
+  lineinfile:
+    dest: /etc/network/interfaces
+    line: 'source-directory interfaces.d'
+    insertafter: 'iface lo inet loopback'
+  
+- include: initrd.yml
+  when: wireless_bootime is defined and wireless_bootime

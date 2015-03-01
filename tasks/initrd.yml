@@ -1,0 +1,24 @@
+---
+
+- name: copy initrd configuration files
+  copy:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest | default("/" + item.src) }}'
+    owner: '{{ item.owner | default("root") }}'
+    group: '{{ item.group | default("root") }}'
+    mode: '{{ item.mode | default("0755") }}'
+  notify: update-initramfs
+  with_items:
+    - src: etc/initramfs-tools/hooks/wpa_supplicant
+    - src: etc/initramfs-tools/scripts/init-bottom/wpa_supplicant
+    - src: etc/initramfs-tools/scripts/init-premount/wpa_supplicant
+
+- name: create wpa_supplicant file for initrd
+  template:
+    src: etc/initramfs-tools/etc/wpa_supplicant.conf
+    dest: '/etc/initramfs-tools/etc/wpa_supplicant.conf'
+    owner: root
+    group: root
+    mode: '0600'
+  notify: update-initramfs
+  when: wireless_iface is defined
