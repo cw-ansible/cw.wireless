@@ -6,7 +6,7 @@ lang: american
 -->
 
 [![Build Status](https://travis-ci.org/cw-ansible/cw.wireless.svg?branch=master)](https://travis-ci.org/cw-ansible/cw.wireless)
-[![Tweet this](http://img.shields.io/badge/%20-Tweet-00aced.svg)](https://twitter.com/intent/tweet?tw_p=tweetbutton&via=renard_0&url=https%3A%2F%2Fgithub.com%2Fcw-ansible%2Fcw.wireless&text=Configure%20%23Linux%20wireless%20network%20with%20%40ansible%20and%20allow%20remote%20encrypted%20root%20FS%20unlock%20over%20%23WIFI.)
+[![Tweet this](http://img.shields.io/badge/Tweet-it00aced.svg)](https://twitter.com/intent/tweet?tw_p=tweetbutton&via=renard_0&url=https%3A%2F%2Fgithub.com%2Fcw-ansible%2Fcw.wireless&text=Configure%20%23Linux%20wireless%20network%20with%20%40ansible%20and%20allow%20remote%20encrypted%20root%20FS%20unlock%20over%20%23WIFI.)
 [![Follow me on twitter](http://img.shields.io/badge/Twitter-Follow-00aced.svg)](https://twitter.com/intent/follow?region=follow_link&screen_name=renard_0&tw_p=followbutton)
 
 
